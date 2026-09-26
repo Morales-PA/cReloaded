@@ -1,36 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_point.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmorales <jmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/23 19:58:03 by juan              #+#    #+#             */
-/*   Updated: 2026/09/26 19:27:33 by jmorales         ###   ########.fr       */
+/*   Created: 2026/09/26 16:03:44 by jmorales          #+#    #+#             */
+/*   Updated: 2026/09/26 19:18:07 by jmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
+typedef struct mystruct
 {
-	write(1, &c, 1);
-}
-
-void	ft_print_alphabet(void)
-{
-	char	c;
-
-	c = 'a';
-	while (c <= 'z')
-	{
-		ft_putchar(c);
-		c++;
-	}
-}
-/*
-int	main(void)
-{
-	ft_print_alphabet();
-}
-*/
+	int	x;
+	int	y;
+}	t_point;

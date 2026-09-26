@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmorales <jmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/23 19:58:03 by juan              #+#    #+#             */
-/*   Updated: 2026/09/26 19:27:33 by jmorales         ###   ########.fr       */
+/*   Created: 2026/09/26 13:33:28 by jmorales          #+#    #+#             */
+/*   Updated: 2026/09/26 19:23:45 by jmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_putchar(char c)
+// TO DO:
+
+char	*ft_strdup(char *src)
 {
-	write(1, &c, 1);
-}
+	char	*new_string;
+	int		str_length;
 
-void	ft_print_alphabet(void)
-{
-	char	c;
-
-	c = 'a';
-	while (c <= 'z')
+	str_length = 0;
+	while (src[str_length])
+		str_length++;
+	new_string = malloc(sizeof(char [str_length]));
+	if (!new_string)
+		return (NULL);
+	str_length = 0;
+	while (src[str_length])
 	{
-		ft_putchar(c);
-		c++;
+		new_string[str_length] = src[str_length];
+		str_length++;
 	}
+	return (new_string);
 }
-/*
-int	main(void)
-{
-	ft_print_alphabet();
-}
-*/

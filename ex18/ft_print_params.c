@@ -3,14 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jmorales <jmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 14:36:38 by juan              #+#    #+#             */
-/*   Updated: 2026/09/24 14:49:27 by juan             ###   ########.fr       */
+/*   Updated: 2026/09/26 19:29:38 by jmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
 
 int	main(int argc, char **argv)
 {
@@ -23,10 +28,10 @@ int	main(int argc, char **argv)
 		j = 0;
 		while (argv[i][j] != '\0')
 		{
-			write(1, &argv[i][j], 1);
+			ft_putchar(argv[i][j]);
 			j++;
 		}
-		write(1, "\n", 1);
+		ft_putchar('\n');
 		i++;
 	}
 }

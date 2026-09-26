@@ -3,28 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jmorales <jmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 14:17:26 by juan              #+#    #+#             */
-/*   Updated: 2026/09/24 14:24:50 by juan             ###   ########.fr       */
+/*   Updated: 2026/09/26 18:22:00 by jmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-//#include <stdio.h>
 
 int	ft_strlen(char *str)
 {
 	int	len;
 
 	len = 0;
-	while (*str != '\0')
-	{
+	while (str[len])
 		len++;
-		str++;
-	}
 	return (len);
 }
 /*
+#include <stdio.h>
 int main(void)
 {
 	printf("%d",ft_strlen("Buenas"));

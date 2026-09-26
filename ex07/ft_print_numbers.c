@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_numbers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jmorales <jmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/23 20:12:07 by juan              #+#    #+#             */
-/*   Updated: 2026/09/24 18:24:12 by juan             ###   ########.fr       */
+/*   Updated: 2026/09/26 19:27:18 by jmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <unistd.h>
+#include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
 
 void	ft_print_numbers(void)
 {
@@ -31,7 +36,7 @@ void	ft_print_numbers(void)
 	c = '0';
 	while (c <= '9')
 	{
-		write(1, &c, 1);
+		ft_putchar(c);
 		c++;
 	}
 }

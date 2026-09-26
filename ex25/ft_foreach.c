@@ -1,36 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_foreach.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmorales <jmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/23 19:58:03 by juan              #+#    #+#             */
-/*   Updated: 2026/09/26 19:27:33 by jmorales         ###   ########.fr       */
+/*   Created: 2026/09/26 16:59:28 by jmorales          #+#    #+#             */
+/*   Updated: 2026/09/26 17:14:15 by jmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
+void	ft_foreach(int *tab, int length, void (*f)(int))
 {
-	write(1, &c, 1);
-}
+	int	i;
 
-void	ft_print_alphabet(void)
-{
-	char	c;
-
-	c = 'a';
-	while (c <= 'z')
+	i = 0;
+	while (i < length)
 	{
-		ft_putchar(c);
-		c++;
+		(*f)(tab[i]);
+		i++;
 	}
 }
 /*
-int	main(void)
+#include <stdio.h>
+int main(void)
 {
-	ft_print_alphabet();
+	int tab[] = {1,2,3,4,5};
+
+	void myfunction(int n) 
+	{
+		printf("%d",n);
+	}
+
+	ft_foreach(tab, 5, myfunction);
 }
 */
