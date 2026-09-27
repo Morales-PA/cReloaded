@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmorales <jmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/26 13:33:28 by jmorales          #+#    #+#             */
-/*   Updated: 2026/09/27 20:47:18 by jmorales         ###   ########.fr       */
+/*   Created: 2026/09/27 20:56:14 by jmorales          #+#    #+#             */
+/*   Updated: 2026/09/27 21:04:52 by jmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strdup(char *src)
+int	ft_sqrt(int nb)
 {
-	char	*new_string;
-	int		str_length;
+	int	i;
 
-	str_length = 0;
-	while (src[str_length])
+	if (nb == 0)
+		return (0);
+	if (nb == 1)
+		return (1);
+	i = 1;
+	while (1)
 	{
-		str_length++;
+		if ((i * i) == nb)
+		{
+			return (i);
+		}
+		if ((i * i) > nb)
+		{
+			return (0);
+		}
 	}
-	new_string = malloc(sizeof(char [str_length]));
-	if (new_string == NULL)
-	{
-		return (NULL);
-	}
-	str_length = 0;
-	while (src[str_length])
-	{
-		new_string[str_length] = src[str_length];
-		str_length++;
-	}
-	return (new_string);
 }
