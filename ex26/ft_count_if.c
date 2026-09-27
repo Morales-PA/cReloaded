@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_count_if.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmorales <jmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/24 18:04:29 by juan              #+#    #+#             */
-/*   Updated: 2026/09/27 19:51:13 by jmorales         ###   ########.fr       */
+/*   Created: 2026/09/27 18:49:41 by jmorales          #+#    #+#             */
+/*   Updated: 2026/09/27 19:50:33 by jmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
+int	ft_count_if(char **tab, int (*f)(char*))
 {
-	write(1, &c, 1);
-}
+	int	i;
+	int	count;
 
-void	ft_putstr(char *str)
-{
-	while (*str != '\0')
+	i = 0;
+	count = 0;
+	while (tab[i])
 	{
-		ft_putchar(*str);
-		str++;
+		if ((*f)(tab[i]))
+			count++;
+		i++;
 	}
+	return (count);
 }
-/*
-int main(void)
-{
-	ft_putstr("Hello");
-}
-*/
