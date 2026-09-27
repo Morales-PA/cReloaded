@@ -3,26 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jmorales <jmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 14:25:44 by juan              #+#    #+#             */
-/*   Updated: 2026/09/24 14:36:14 by juan             ###   ########.fr       */
+/*   Updated: 2026/09/27 20:31:43 by jmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-
 int	ft_strcmp(char *s1, char *s2)
 {
-	while (*s1 != '\0' && *s2 != '\0')
+	int	i;
+
+	i = 0;
+	while (s1[i] && s2[i] && s1[i] == s2[i])
 	{
-		return (*s1 - *s2);
+		i++;
 	}
-	return (*s1 - *s2);
+	return (s1[i] - s2[i]);
 }
-/*
-int main(void)
-{
-	printf("%d",ft_strcmp("aa","ab"));
-}
-*/
+
+// #include <stdio.h>
+// int main(void)
+// {
+// 	printf("%d",ft_strcmp("",""));
+// 	printf("%s","/");
+// 	printf("%d",ft_strcmp("","a"));
+// 	printf("%s","/");
+// 	printf("%d",ft_strcmp("b","a"));
+// }

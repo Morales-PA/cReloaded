@@ -6,24 +6,25 @@
 /*   By: jmorales <jmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 14:55:02 by juan              #+#    #+#             */
-/*   Updated: 2026/09/26 19:31:45 by jmorales         ###   ########.fr       */
+/*   Updated: 2026/09/27 20:31:58 by jmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+void	ft_putchar(char c);
+// {
+// 	write(1, &c, 1);
+// }
 
 int	ft_strcmp(char *s1, char *s2)
 {
-	while (*s1 != '\0' && *s2 != '\0')
+	int	i;
+
+	i = 0;
+	while (s1[i] && s2[i] && s1[i] == s2[i])
 	{
-		return (*s1 - *s2);
+		i++;
 	}
-	return (*s1 - *s2);
+	return (s1[i] - s2[i]);
 }
 
 void	ft_print_argv(int argc, char **argv)

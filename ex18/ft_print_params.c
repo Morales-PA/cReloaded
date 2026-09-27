@@ -6,16 +6,16 @@
 /*   By: jmorales <jmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/24 14:36:38 by juan              #+#    #+#             */
-/*   Updated: 2026/09/26 19:29:38 by jmorales         ###   ########.fr       */
+/*   Updated: 2026/09/27 20:16:09 by jmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+//#include <unistd.h>
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+void	ft_putchar(char c);
+// {
+// 	write(1, &c, 1);
+// }
 
 int	main(int argc, char **argv)
 {
