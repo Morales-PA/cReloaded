@@ -1,28 +1,33 @@
-NAME = libft.a
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: juan <juan@student.42.fr>                  +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2026/09/28 15:41:37 by juan              #+#    #+#              #
+#    Updated: 2026/09/28 15:41:43 by juan             ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CC_FLAGS = -Wall -Wextra -Werror 
+NAME = libft.a
+SRC = srcs/*.c
+OBJ = *.o
+INCLUDES = includes/*.h
 
-SRCS = srcs/ft_putchar.c \
-srcs/ft_putstr.c \
-srcs/ft_strcmp.c \
-srcs/ft_strlen.c \
-srcs/ft_swap.c
+all : $(NAME)
 
-OBJS = $(SRCS:.c=.o)
+$(NAME) : $(SRC)
+	$(CC) -c $(SRC) $(CC_FLAGS)
+	ar rc $(NAME) $(OBJ)
+	ranlib $(NAME)
 
-all: $(NAME)
+clean :
+	rm -f *.o
 
-$(NAME): $(OBJS)
-ar rcs $(NAME) $(OBJS)
+fclean : clean
+	rm -f $(NAME)
 
-%.o: %.c
-$(CC) $(CFLAGS) -I includes -c $< -o $@
-
-clean:
-rm -f $(OBJS)
-
-fclean: clean
-rm -f $(NAME)
-
-re: fclean all
+re : fclean all

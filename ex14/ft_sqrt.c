@@ -3,32 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmorales <jmorales@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 20:56:14 by jmorales          #+#    #+#             */
-/*   Updated: 2026/09/27 21:12:57 by jmorales         ###   ########.fr       */
+/*   Updated: 2026/09/28 15:43:59 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_sqrt(int nb)
+int		ft_sqrt(int nb)
 {
-	int	i;
+	int i;
 
-	if (nb == 0)
-		return (0);
+	i = 1;
+	while (i * i < nb)
+		i++;
 	if (nb == 1)
 		return (1);
-	i = 1;
-	while (1)
-	{
-		if ((i * i) == nb)
-		{
-			return (i);
-		}
-		if ((i * i) > nb)
-		{
-			return (0);
-		}
-		i++;
-	}
+	if (i * i == nb)
+		return (i);
+	else
+		return (0);
 }
