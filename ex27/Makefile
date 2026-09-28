@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: juan <juan@student.42.fr>                  +#+  +:+       +#+         #
+#    By: jmorales <jmorales@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/09/28 15:42:13 by juan              #+#    #+#              #
-#    Updated: 2026/09/28 15:42:15 by juan             ###   ########.fr        #
+#    Updated: 2026/09/28 16:57:05 by jmorales         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,5 +26,3 @@ clean :
 
 fclean : clean
 	rm -f $(NAME)
-
-re : fclean all

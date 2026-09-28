@@ -6,7 +6,7 @@
 /*   By: jmorales <jmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 19:03:15 by jmorales          #+#    #+#             */
-/*   Updated: 2026/09/27 20:52:23 by jmorales         ###   ########.fr       */
+/*   Updated: 2026/09/28 16:56:58 by jmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_putstr(char *str)
 int	main(int argc, char const **argv)
 {
 	int		fd;
-	char	buffer[1000];
+	char	buffer[1];
 
 	if (argc == 1)
 	{
@@ -48,7 +48,7 @@ int	main(int argc, char const **argv)
 		ft_putstr("Cannot read file.\n");
 		return (1);
 	}
-	while (read(fd, buffer, 1000) > 0)
+	while (read(fd, buffer, 1) > 0)
 	{
 		ft_putstr(buffer);
 	}
