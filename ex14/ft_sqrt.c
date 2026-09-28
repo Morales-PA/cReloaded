@@ -6,13 +6,13 @@
 /*   By: juan <juan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 20:56:14 by jmorales          #+#    #+#             */
-/*   Updated: 2026/09/28 15:43:59 by juan             ###   ########.fr       */
+/*   Updated: 2026/09/28 15:48:31 by juan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_sqrt(int nb)
+int	ft_sqrt(int nb)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	while (i * i < nb)
