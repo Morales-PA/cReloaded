@@ -6,23 +6,18 @@
 /*   By: jmorales <jmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 19:03:15 by jmorales          #+#    #+#             */
-/*   Updated: 2026/09/28 16:56:58 by jmorales         ###   ########.fr       */
+/*   Updated: 2026/09/28 17:15:15 by jmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fcntl.h>
 #include <unistd.h>
 
-void	ft_putchar(char c);
-// {
-// 	write(1, &c, 1);
-// }
-
 void	ft_putstr(char *str)
 {
 	while (*str != '\0')
 	{
-		ft_putchar(*str);
+		write(1, &(*str), 1);
 		str++;
 	}
 }
