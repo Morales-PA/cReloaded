@@ -6,7 +6,7 @@
 /*   By: jmorales <jmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 19:03:15 by jmorales          #+#    #+#             */
-/*   Updated: 2026/09/28 17:15:15 by jmorales         ###   ########.fr       */
+/*   Updated: 2026/09/28 17:23:24 by jmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,15 @@ void	ft_putstr(char *str)
 	}
 }
 
+void	ft_puterror(char *str)
+{
+	while (*str != '\0')
+	{
+		write(1, &(*str), 1);
+		str++;
+	}
+}
+
 int	main(int argc, char const **argv)
 {
 	int		fd;
@@ -29,18 +38,18 @@ int	main(int argc, char const **argv)
 
 	if (argc == 1)
 	{
-		ft_putstr("File name missing.\n");
+		ft_puterror("File name missing.\n");
 		return (1);
 	}
 	if (argc > 2)
 	{
-		ft_putstr("Too many arguments.\n");
+		ft_puterror("Too many arguments.\n");
 		return (1);
 	}
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
 	{
-		ft_putstr("Cannot read file.\n");
+		ft_puterror("Cannot read file.\n");
 		return (1);
 	}
 	while (read(fd, buffer, 1) > 0)
