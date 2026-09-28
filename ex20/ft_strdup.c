@@ -6,9 +6,11 @@
 /*   By: jmorales <jmorales@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/26 13:33:28 by jmorales          #+#    #+#             */
-/*   Updated: 2026/09/27 21:16:07 by jmorales         ###   ########.fr       */
+/*   Updated: 2026/09/28 16:57:09 by jmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
 
 char	*ft_strdup(char *src)
 {
@@ -20,7 +22,7 @@ char	*ft_strdup(char *src)
 	{
 		str_length++;
 	}
-	new_string = malloc(sizeof(char [str_length]));
+	new_string = malloc(sizeof(char [str_length + 1]));
 	if (new_string == NULL)
 	{
 		return (NULL);
